@@ -10,6 +10,14 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import Reactotron from 'reactotron-react-native'
+
+if(__DEV__) {
+  Reactotron
+    .configure()
+    .useReactNative() 
+    .connect() 
+}
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -21,6 +29,7 @@ const instructions = Platform.select({
 interface Props {}
 export default class App extends Component<Props> {
   render() {
+    Reactotron.log('ReactApp Start!!')
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
