@@ -10,7 +10,10 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+
 import Reactotron from 'reactotron-react-native'
+import CodePush from 'react-native-code-push'
+
 
 if(__DEV__) {
   Reactotron
@@ -27,12 +30,12 @@ const instructions = Platform.select({
 });
 
 interface Props {}
-export default class App extends Component<Props> {
+class App extends Component<Props> {
   render() {
     Reactotron.log('ReactApp Start!!')
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>Welcome to code push!!!!</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
@@ -58,3 +61,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+const codePushOptions = { checkFrequency: CodePush.CheckFrequency.ON_APP_START };
+
+const CodePushApp = CodePush(codePushOptions)(App)
+
+export default CodePushApp

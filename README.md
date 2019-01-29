@@ -13,6 +13,7 @@
 - [ ] ad
 - [ ] noti
 - [ ] GoogleLogin
+- [ ] analytics
 
 ### Infra, Deploy
 
