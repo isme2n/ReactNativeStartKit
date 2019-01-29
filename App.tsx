@@ -9,7 +9,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import Reactotron from 'reactotron-react-native'
 import CodePush from 'react-native-code-push'
@@ -31,6 +31,13 @@ const instructions = Platform.select({
 
 interface Props {}
 class App extends Component<Props> {
+
+  private onButtonPress = () => {
+    CodePush.sync({
+      updateDialog: CodePush.DEFAULT_UPDATE_DIALOG,
+      installMode: CodePush.InstallMode.IMMEDIATE
+    });
+  }
   render() {
     Reactotron.log('ReactApp Start!!')
     return (
@@ -38,6 +45,9 @@ class App extends Component<Props> {
         <Text style={styles.welcome}>Welcome to code push!!!!</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+        <TouchableOpacity onPress={this.onButtonPress}>
+          <Text>Check for updates</Text>
+        </TouchableOpacity>
       </View>
     );
   }
