@@ -42,7 +42,7 @@ class App extends Component<Props> {
     Reactotron.log('ReactApp Start!!')
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to code push!!!!</Text>
+        <Text style={styles.welcome}>Welcome to @CodePushApp@!!!!</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <TouchableOpacity onPress={this.onButtonPress}>
