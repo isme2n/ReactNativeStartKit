@@ -18,5 +18,7 @@
 ### Infra, Deploy
 
 - [x] Reactotron
-- [ ] CodePush
-- [ ] Sentry
+- [x] CodePush
+- [x] Sentry
+- [x] Dotenv
+- [x] Prettier
