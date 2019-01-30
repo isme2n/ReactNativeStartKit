@@ -13,7 +13,12 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import Reactotron from 'reactotron-react-native'
 import CodePush from 'react-native-code-push'
+import { Sentry } from 'react-native-sentry';
 
+import { SENTRY_ENDPOINT } from 'react-native-dotenv'
+
+
+Sentry.config(SENTRY_ENDPOINT).install();
 
 if(__DEV__) {
   Reactotron
@@ -42,7 +47,7 @@ class App extends Component<Props> {
     Reactotron.log('ReactApp Start!!')
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to CodePushApp</Text>
+        <Text style={styles.welcome}>Welcome to CodePushApp!!!</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <TouchableOpacity onPress={this.onButtonPress}>
